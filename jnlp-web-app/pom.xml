@@ -18,28 +18,25 @@
 	<build>
 		<finalName>jnlp-web-app</finalName>
 		<plugins>
-
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.3.0.v20150612</version>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>webstart-maven-plugin</artifactId>
 				<executions>
-				<!-- 
-					<execution>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>jnlp-download-servlet</goal>
-						</goals>
-					</execution>
-				-->
+					<!-- <execution> <phase>process-resources</phase> <goals> <goal>jnlp-download-servlet</goal> 
+						</goals> </execution> -->
 				</executions>
 
 				<configuration>
 
 					<!-- This is the directory containing the Velocity templates from which 
 						the JNLP files will be generated. The default location is 'src/main/jnlp'. 
-					<templateDirectory>src/main/jnlp/my-templates</templateDirectory>
-					-->
-					
+						<templateDirectory>src/main/jnlp/my-templates</templateDirectory> -->
+
 					<!-- This is the name of the directory within which the processed JNLP 
 						artifacts will be placed. This directory will reside in the root of the WAR 
 						file produced by the enclosing project. The name provided here must match 
@@ -57,36 +54,20 @@
 									<groupId>org.javafx</groupId>
 									<artifactId>hello-world</artifactId>
 									<version>0.0.1-SNAPSHOT</version>
-									<!-- 
-									<classifier>[some optional classifier]</classifier>
-									-->
+									<!-- <classifier>[some optional classifier]</classifier> -->
 									<!-- A mainClass element must be specified on one, and only one, 
 										jarResource per jnlpFile -->
 									<mainClass>org.javafx.helloworld.App</mainClass>
 								</jarResource>
-								<!-- 
-								<jarResource>
-									<groupId>[some groupId]</groupId>
-									<artifactId>[some artifactId]</artifactId>
-									<version>[some version]</version>
-								</jarResource>
-								 -->
+								<!-- <jarResource> <groupId>[some groupId]</groupId> <artifactId>[some 
+									artifactId]</artifactId> <version>[some version]</version> </jarResource> -->
 							</jarResources>
 						</jnlpFile>
-<!-- 
-						<jnlpFile>
-							<templateFilename>app2Template.vm</templateFilename>
-							<outputFilename>application2.jnlp</outputFilename>
-							<jarResources>
-								<jarResource>
-									<groupId>[some groupId]</groupId>
-									<artifactId>[some artifactId]</artifactId>
-									<version>[some version]</version>
-									<mainClass>[app2 main class]</mainClass>
-								</jarResource>
-							</jarResources>
-						</jnlpFile>
- -->
+						<!-- <jnlpFile> <templateFilename>app2Template.vm</templateFilename> 
+							<outputFilename>application2.jnlp</outputFilename> <jarResources> <jarResource> 
+							<groupId>[some groupId]</groupId> <artifactId>[some artifactId]</artifactId> 
+							<version>[some version]</version> <mainClass>[app2 main class]</mainClass> 
+							</jarResource> </jarResources> </jnlpFile> -->
 					</jnlpFiles>
 
 					<!-- Jar resources that are to be included in all generated JNLP files 
